@@ -19,7 +19,7 @@ else
 t1=t1->rchild;
 }
 if(t1!=(struct node *)0)
-printf("\nduplicate:\n");
+printf("Duplicate data/n");
 else
 {
 t=(struct node *) malloc (sizeof(struct node));
@@ -69,7 +69,7 @@ t=t->lchild;
 else t=t->rchild;
 }
 if(t==(struct node *)0)//not found
-printf("\n%d not found \n",item);
+printf("--%d Item not found \n",item);
 else//item found
 {
 if(t->lchild==(struct node *)0 && t->rchild==(struct node *)0)//leaf node or zero child case
@@ -121,33 +121,34 @@ struct node *t1,*t=(struct node *)0;
 int data,opt;
 do
 {
-printf("\n\n1.insert\n");
-printf("2.display\n");
-printf("3.search\n");
-printf("4.delete\n");
-printf("5.exit\n");
-printf("\noption\n");
+printf("\n\n---OPTIONS---");
+printf("\n1.Insert\n");
+printf("2.Display\n");
+printf("3.Search\n");
+printf("4.Delete\n");
+printf("5.Exit\n");
+printf("\n--Enter your Option: ");
 scanf("%d",&opt);
 switch(opt)
 {
 case 1:
-      printf("\ndata: ");
+      printf("\n--Enter data: ");
       scanf("%d",&data);
       t=insert(t,data);
       break;
 case 2:inorder (t);
        break;
-case 3:printf("\nitem to search: ");
+case 3:printf("\n--item to search: ");
     scanf("%d",&data);
     t1=search(t,data);
     if(t1==(struct node *)0)
     {
-    printf("\nnot found\n");
+    printf("\n--Item not found\n");
     }
     else
-    printf("\nfound\n");
+    printf("\n--Item found\n");
     break;
-case 4:printf("\nitem to delete: ");
+case 4:printf("\n--Enter item to delete: ");
     scanf("%d",&data);
     t=delete(t,data);
     break;
@@ -156,4 +157,3 @@ case 5:exit(0);
     }
     while(1);
 }
-
